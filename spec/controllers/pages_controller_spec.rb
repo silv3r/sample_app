@@ -50,5 +50,21 @@ describe PagesController do
     end
     
   end
+  
+  describe "GET 'help'" do
+  
+    before(:each) do
+      get 'help'
+    end
+  
+    it "should be successful" do
+      response.should be_success
+    end
+    
+    it "should have the right title" do
+      response.should have_selector("title", :content => "help")
+    end
+    
+  end
 
 end
